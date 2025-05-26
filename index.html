@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Demo for my citi college class</title>
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <title>Enter Your Hobby</title>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -12,9 +11,40 @@
 
     gtag('config', 'G-V52XWR72KX'); // Replace with your GA4 ID
   </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    #successBtn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World</h1>
-  <p>This is a test application with Google Analytics.</p>
+
+  <h2>Enter Your Hobby</h2>
+  <input type="text" id="hobbyInput" placeholder="Your hobby here">
+  <button onclick="submitHobby()">Submit</button>
+
+  <button id="successBtn">Success</button>
+
+  <script>
+    function submitHobby() {
+      const hobby = document.getElementById('hobbyInput').value.trim();
+      if (hobby !== "") {
+        document.getElementById('successBtn').style.display = 'inline-block';
+      } else {
+        alert("Please enter a hobby.");
+      }
+    }
+  </script>
+
 </body>
 </html>
